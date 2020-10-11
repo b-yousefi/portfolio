@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./components/home";
+import Home from "./components/home";
 import Appbar from "./components/appbar";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import purple from "@material-ui/core/colors/purple";
@@ -11,7 +11,7 @@ const theme = createMuiTheme({
       main: purple[500],
     },
     secondary: {
-      main: "#f44336",
+      main: "#3f51b5",
     },
   },
 });
@@ -29,7 +29,7 @@ function App() {
                 return <Redirect to="/home" />;
               }}
             />
-            <Route exact path="/home" component={Header} />
+            <Route exact path="/home" component={Home} />
           </div>
         </Appbar>
       </ThemeProvider>

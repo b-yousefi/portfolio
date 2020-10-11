@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
+import CodeIcon from "@material-ui/icons/Code";
+import WorkIcon from "@material-ui/icons/Work";
 import { withStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import { NavLink } from "react-router-dom";
@@ -14,6 +16,21 @@ const DrawerMenu = (props) => {
 
   const { classes } = props;
 
+  const drawerItem = (title, path, icon) => {
+    return (
+      <ListItem
+        button
+        color="inherit"
+        component={NavLink}
+        to={path}
+        onClick={() => toggleDrawer(false)}
+      >
+        <ListItemIcon>{icon}</ListItemIcon>
+        <ListItemText primary={title} />
+      </ListItem>
+    );
+  };
+
   return (
     <SwipeableDrawer
       anchor="left"
@@ -26,18 +43,10 @@ const DrawerMenu = (props) => {
     >
       <div role="presentation" onKeyDown={() => toggleDrawer(false)}>
         <List>
-          <ListItem
-            button
-            color="inherit"
-            component={NavLink}
-            to="/home"
-            onClick={() => toggleDrawer(false)}
-          >
-            <ListItemIcon>
-              <HomeIcon />{" "}
-            </ListItemIcon>
-            <ListItemText primary="Home" />
-          </ListItem>
+          {drawerItem("Home", "/home", <HomeIcon />)}
+          {drawerItem("Projects", "/projects", <CodeIcon />)}
+          {drawerItem("Work Experiences", "/work-experiences", <WorkIcon />)}
+          {drawerItem("About me", "/about")}
         </List>
       </div>
     </SwipeableDrawer>

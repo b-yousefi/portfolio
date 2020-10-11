@@ -1,14 +1,14 @@
 import React from "react";
-import { Avatar, Box, Grid, Typography } from "@material-ui/core";
-import pic from "../images/BehnazYousefi.jpg";
+import { Avatar, Box, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import Button from "@material-ui/core/Button";
+import { personalInfo } from "../data/personalInfo";
 
 const useStyles = (theme) => ({
-  grid: {
+  root: {
     backgroundColor: "#f5f8fa",
-    padding: 10,
-  },
-  headerDetail: {
     padding: 10,
   },
   picture: {
@@ -23,31 +23,66 @@ const useStyles = (theme) => ({
 const Home = (props) => {
   const { classes } = props;
   return (
-    <Grid container justify={"center"} className={classes.grid}>
-      <Grid item xs={4} md={2}>
-        <Box className={classes.headerDetail}>
-          <Avatar alt="Behnaz Yousefi" src={pic} className={classes.picture} />
+    <div style={{ width: "100%" }}>
+      <Box flexDirection={"column"} display="flex" m={1} p={2}>
+        <Box display="flex" justifyContent="center">
+          <Avatar
+            alt={personalInfo.fullName}
+            src={personalInfo.pic}
+            className={classes.picture}
+          />
         </Box>
-      </Grid>
-      <Grid item md={8}>
-        <Box flexDirection={"column"} className={classes.headerDetail}>
-          <Typography variant="h4" align={"justify"}>
-            Full Stack Developer
-          </Typography>
-          <Typography variant="h5" align={"justify"}>
-            Master Degree in Software Engineering
-          </Typography>
-          <Typography variant="body1" align={"justify"}>
-            Self-motivated, well-organized and highly-skilled software developer
-            with 3+ years of professional programming experience
-          </Typography>
-          <Typography variant="h6" align={"justify"} className={classes.role}>
-            Looking for a Full-Stack (Spring, React.js), Back-end (Spring) or
-            Frond-end (React.js) role
-          </Typography>
+        <Box flexDirection={"column"} className={classes.detail}>
+          <Box display="flex" justifyContent="center" p={1}>
+            <Typography variant="h4" align={"justify"}>
+              {personalInfo.fullName}
+            </Typography>
+          </Box>
+          <Box display="flex" justifyContent="center" p={1}>
+            <Typography variant="h4" align={"justify"}>
+              {personalInfo.role}
+            </Typography>
+          </Box>
+          <Box display="flex" justifyContent="center" p={1}>
+            <Typography variant="h5" align={"justify"}>
+              {personalInfo.education}
+            </Typography>
+          </Box>
+          <Box display="flex" justifyContent="center">
+            <Typography variant="body1" align={"justify"}>
+              {personalInfo.summary}
+            </Typography>
+          </Box>
+          <Box display="flex" justifyContent="center">
+            <Typography variant="h6" align={"justify"} className={classes.role}>
+              {personalInfo.lookingFor}
+            </Typography>
+          </Box>
         </Box>
-      </Grid>
-    </Grid>
+        <Box display="flex" justifyContent="center" p={2}>
+          <Box m={1}>
+            <Button
+              variant="contained"
+              color="primary"
+              startIcon={<GitHubIcon />}
+              href={personalInfo.githubAccountUrl}
+            >
+              Github Account
+            </Button>
+          </Box>
+          <Box m={1}>
+            <Button
+              variant="contained"
+              color="secondary"
+              startIcon={<LinkedInIcon />}
+              href={personalInfo.linkedInAccountUrl}
+            >
+              LinkedIn Account
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+    </div>
   );
 };
 

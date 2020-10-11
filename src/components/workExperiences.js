@@ -12,26 +12,28 @@ const WorkExperiences = (props) => {
     return (
       <Grid key={work.jobTitle} item md={8} xs={12}>
         <Paper className={classes.item}>
-          <Typography variant="h6" align={"justify"}>
-            {work.jobTitle}
-          </Typography>
-          <Typography variant="subtitle1" align={"justify"}>
-            {work.companyName}
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align={"justify"}
-            color={"textSecondary"}
-          >
-            {work.readableStartDate} - {work.readableEndDate}
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align={"justify"}
-            color={"textSecondary"}
-          >
-            {work.location}
-          </Typography>
+          <Box display="flex" className={classes.job} flexDirection={"column"}>
+            <Typography variant="h6" align={"justify"}>
+              {work.jobTitle}
+            </Typography>
+            <Typography variant="subtitle1" align={"justify"}>
+              {work.companyName}
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              align={"justify"}
+              color={"textSecondary"}
+            >
+              {work.readableStartDate} - {work.readableEndDate}
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              align={"justify"}
+              color={"textSecondary"}
+            >
+              {work.location}
+            </Typography>
+          </Box>
           {work.tasks.map((task) => {
             return (
               <Box display="flex" p={1} alignItems="center">
@@ -70,6 +72,9 @@ const useStyles = (theme) => ({
   },
   item: {
     padding: 15,
+  },
+  job: {
+    paddingLeft: 20,
   },
 });
 

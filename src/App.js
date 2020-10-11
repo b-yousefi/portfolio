@@ -4,6 +4,7 @@ import Appbar from "./components/appbar";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import purple from "@material-ui/core/colors/purple";
 import { BrowserRouter, Redirect, Route } from "react-router-dom";
+import WorkExperiences from "./components/workExperiences";
 
 const theme = createMuiTheme({
   palette: {
@@ -30,6 +31,7 @@ function App() {
               }}
             />
             <Route exact path="/home" component={Home} />
+            <Route exact path="/work-experiences" component={WorkExperiences} />
           </div>
         </Appbar>
       </ThemeProvider>

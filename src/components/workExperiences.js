@@ -10,7 +10,7 @@ const WorkExperiences = (props) => {
 
   const createWorkItem = (work) => {
     return (
-      <Grid key={work.id} item md={8} xs={12}>
+      <Grid key={work.jobTitle} item md={8} xs={12}>
         <Paper className={classes.item}>
           <Box display="flex" className={classes.job} flexDirection={"column"}>
             <Typography variant="h6" align={"justify"}>

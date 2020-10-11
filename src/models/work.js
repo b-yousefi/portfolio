@@ -2,7 +2,6 @@ import moment from "moment";
 
 class Work {
   constructor(
-    id,
     jobTitle,
     companyName,
     companyLogoUrl,
@@ -12,7 +11,6 @@ class Work {
     tasks,
     projects
   ) {
-    this.id = id;
     this.jobTitle = jobTitle;
     this.companyName = companyName;
     this.location = location;

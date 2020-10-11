@@ -2,6 +2,7 @@ import Work from "../models/work";
 
 export const works = [
   new Work(
+    1,
     "Full Stack Developer",
     "",
     "",
@@ -17,6 +18,7 @@ export const works = [
     []
   ),
   new Work(
+    2,
     "Software Designer and Mainframe Developer",
     "ISC (Informatics Services Corporation)",
     "",
@@ -36,6 +38,7 @@ export const works = [
     []
   ),
   new Work(
+    3,
     "Java Developer",
     "TOSAN (Banking and Payment Solutions Provider)",
     "",

@@ -5,7 +5,7 @@ class Project {
     summary,
     description,
     technologies,
-    pic,
+    images,
     sourceCodeLink,
     demoLink
   ) {
@@ -14,7 +14,7 @@ class Project {
     this.description = description;
     this.summary = summary;
     this.technologies = technologies;
-    this.pic = pic;
+    this.images = images;
     this.sourceCodeLink = sourceCodeLink;
     this.demoLink = demoLink;
   }

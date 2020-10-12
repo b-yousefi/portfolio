@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Box, Grid, Paper, Typography } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { projects } from "../data/projects";
 import ProjectItem from "./projectItem";
 
@@ -9,11 +9,11 @@ const Projects = (props) => {
 
   const createProjectItem = (project) => {
     return (
-      <Grid key={project.id} item xs={12}>
+      <Grid key={project.id} item xs={12} md={6}>
         <ProjectItem
           title={project.name}
           description={project.summary}
-          image={project.pic}
+          images={project.images}
           sourceCodeLink={project.sourceCodeLink}
           id={project.id}
           tech={project.technologies}

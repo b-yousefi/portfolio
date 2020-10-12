@@ -11,8 +11,8 @@ import { red } from "@material-ui/core/colors";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import { Link } from "react-router-dom";
+import Carousel from "react-material-ui-carousel";
 
 const ProjectItem = (props) => {
   const { classes } = props;
@@ -35,7 +35,7 @@ const ProjectItem = (props) => {
       <Box flexDirection="row" display="flex" flexWrap="wrap">
         {techs.map((item, indx) => {
           return (
-            <Box style={{ margin: 5 }}>
+            <Box style={{ margin: 5 }} key={indx}>
               <div
                 style={{
                   display: "inline-block",
@@ -60,23 +60,24 @@ const ProjectItem = (props) => {
   return (
     <Card className={classes.root}>
       <CardHeader title={props.title} subheader={createTechStack(props.tech)} />
-      <CardActionArea
-        component={Link}
-        to={{
-          pathname: `/projects/${props.id}`,
-        }}
-      >
-        <CardMedia
-          className={classes.media}
-          image={props.image}
-          title={props.title}
-        />
-        <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {props.description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      <Carousel>
+        {props.images.map((image, indx) => {
+          return (
+            <CardMedia
+              className={classes.media}
+              image={image}
+              title={props.title}
+              key={props.title + indx}
+            />
+          );
+        })}
+      </Carousel>
+
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {props.description}
+        </Typography>
+      </CardContent>
       <CardActions disableSpacing>
         <Box display="flex" width="100%" alignItems={"center"}>
           <Box flexGrow={1} p={1}>
@@ -111,8 +112,9 @@ const useStyles = (theme) => ({
     height: "100%",
   },
   media: {
-    height: 0,
-    paddingTop: "46%",
+    height: 180,
+    width: "auto",
+    backgroundSize: "contain",
   },
   avatar: {
     backgroundColor: red[500],

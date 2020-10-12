@@ -67,7 +67,7 @@ const Home = (props) => {
               startIcon={<GitHubIcon />}
               href={personalInfo.githubAccountUrl}
             >
-              Github Account
+              Github
             </Button>
           </Box>
           <Box m={1}>
@@ -77,7 +77,7 @@ const Home = (props) => {
               startIcon={<LinkedInIcon />}
               href={personalInfo.linkedInAccountUrl}
             >
-              LinkedIn Account
+              LinkedIn
             </Button>
           </Box>
         </Box>

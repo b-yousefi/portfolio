@@ -1,16 +1,8 @@
 import Project from "../models/project";
-// import androidPic from "../images/tosan.jpg";
-// import bookshopRNPic from "../images/bookshop-react-native.jpg";
 
 function importAll(r) {
   return r.keys().map(r);
 }
-
-const images = importAll(
-  require.context("../images/android", false, /\.(png|jpe?g|svg)$/)
-);
-
-console.log(images.length);
 
 export const projects = [
   new Project(

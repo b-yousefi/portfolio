@@ -34,9 +34,9 @@ const WorkExperiences = (props) => {
               {work.location}
             </Typography>
           </Box>
-          {work.tasks.map((task) => {
+          {work.tasks.map((task, indx) => {
             return (
-              <Box display="flex" p={1} alignItems="center">
+              <Box display="flex" p={1} alignItems="center" key={indx}>
                 <Box m={1}>
                   <CheckIcon fontSize="small" />
                 </Box>
@@ -55,7 +55,7 @@ const WorkExperiences = (props) => {
 
   return (
     <div style={{ padding: 16 }}>
-      <Grid container xs={12} spacing={2} justify={"center"} m={10}>
+      <Grid container spacing={2} justify={"center"} m={10}>
         {works.map((work) => {
           return createWorkItem(work);
         })}

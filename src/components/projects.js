@@ -24,7 +24,7 @@ const Projects = (props) => {
 
   return (
     <div style={{ padding: 16 }}>
-      <Grid container xs={12} justify={"center"}>
+      <Grid container justify={"center"}>
         <Grid item container xs={12} md={8} spacing={3} justify={"center"}>
           {projects.map((project) => {
             return createProjectItem(project);

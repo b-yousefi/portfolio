@@ -67,7 +67,7 @@ const ProjectItem = (props) => {
               className={classes.media}
               image={image}
               title={props.title}
-              key={props.title + indx}
+              key={indx}
             />
           );
         })}

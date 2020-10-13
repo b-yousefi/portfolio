@@ -8,6 +8,7 @@ import WorkExperiences from "./components/workExperiences";
 import Projects from "./components/projects";
 import Project from "./components/project";
 import { Container } from "@material-ui/core";
+import About from "./components/about";
 
 const theme = createMuiTheme({
   palette: {
@@ -37,6 +38,7 @@ function App() {
           <Route exact path="/work-experiences" component={WorkExperiences} />
           <Route exact path="/projects" component={Projects} />
           <Route path="/projects/:id" component={Project} />
+          <Route path="/about" component={About} />
         </Container>
       </ThemeProvider>
     </BrowserRouter>

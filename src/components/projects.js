@@ -23,7 +23,7 @@ const Projects = (props) => {
   };
 
   return (
-    <div style={{ padding: 16 }}>
+    <div className={classes.root}>
       <Grid container justify={"center"}>
         <Grid item container xs={12} md={8} spacing={3} justify={"center"}>
           {projects.map((project) => {
@@ -36,8 +36,8 @@ const Projects = (props) => {
 };
 
 const useStyles = (theme) => ({
-  item: {
-    padding: 15,
+  root: {
+    padding: 16,
   },
 });
 

@@ -6,6 +6,8 @@ import purple from "@material-ui/core/colors/purple";
 import { BrowserRouter, Redirect, Route } from "react-router-dom";
 import WorkExperiences from "./components/workExperiences";
 import Projects from "./components/projects";
+import Project from "./components/project";
+import { Container } from "@material-ui/core";
 
 const theme = createMuiTheme({
   palette: {
@@ -22,20 +24,20 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <Appbar>
-          <div>
-            <Route
-              exact
-              path="/"
-              render={() => {
-                return <Redirect to="/home" />;
-              }}
-            />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/work-experiences" component={WorkExperiences} />
-            <Route exact path="/projects" component={Projects} />
-          </div>
-        </Appbar>
+        <Appbar />
+        <Container>
+          <Route
+            exact
+            path="/"
+            render={() => {
+              return <Redirect to="/home" />;
+            }}
+          />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/work-experiences" component={WorkExperiences} />
+          <Route exact path="/projects" component={Projects} />
+          <Route path="/projects/:id" component={Project} />
+        </Container>
       </ThemeProvider>
     </BrowserRouter>
   );

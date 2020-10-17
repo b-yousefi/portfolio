@@ -23,7 +23,7 @@ const theme = createMuiTheme({
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ThemeProvider theme={theme}>
         <Appbar />
         <Container>

@@ -46,8 +46,9 @@ export default function Appbar(props) {
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
+            onClick={() => setIsDrawerOpen(true)}
           >
-            <MenuIcon onClick={() => setIsDrawerOpen(true)} />
+            <MenuIcon/>
           </IconButton>
           <Hidden xsDown>
             <Button

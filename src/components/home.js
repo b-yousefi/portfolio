@@ -59,7 +59,7 @@ const Home = (props) => {
             </Typography>
           </Box>
         </Box>
-        <Box display="flex" justifyContent="center" p={2}>
+        <Box display="flex" justifyContent="center" p={2} flexWrap="wrap">
           <Box m={1}>
             <Button
               variant="contained"

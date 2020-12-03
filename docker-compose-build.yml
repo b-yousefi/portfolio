@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  app:
+    image: "portfolio"
+    build:
+      context: .
+      dockerfile: DockerFile
+      args:
+        PUBLIC_URL: /portfolio

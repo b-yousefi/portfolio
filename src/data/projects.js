@@ -59,7 +59,7 @@ export const projects = [
   new Project(
     3,
     "Bookshop Mobile Application",
-    "Mobile application developed via react-native for the Bookshop project to provide same abilities as the web application",
+    "Mobile application developed via react-native for the Bookshop project to provide same abilities as the web application.",
     [],
     ["React-Native", "React Redux", "Javascript", "Css"],
     importAll(

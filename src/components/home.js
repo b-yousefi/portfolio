@@ -34,17 +34,17 @@ const Home = (props) => {
         </Box>
         <Box flexDirection={"column"} className={classes.detail}>
           <Box display="flex" justifyContent="center" p={1}>
-            <Typography variant="h4" align={"justify"}>
+            <Typography variant="h4" align={"center"}>
               {personalInfo.fullName}
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center" p={1}>
-            <Typography variant="h4" align={"justify"}>
+            <Typography variant="h4" align={"center"}>
               {personalInfo.role}
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center" p={1}>
-            <Typography variant="h5" align={"justify"}>
+            <Typography variant="h5" align={"center"}>
               {personalInfo.education}
             </Typography>
           </Box>
@@ -54,7 +54,7 @@ const Home = (props) => {
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
-            <Typography variant="h6" align={"justify"} className={classes.role}>
+            <Typography variant="h6" align={"center"} className={classes.role}>
               {personalInfo.lookingFor}
             </Typography>
           </Box>

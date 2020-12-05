@@ -81,8 +81,12 @@ const Home = (props) => {
             </Button>
           </Box>
           <Box m={1}>
-            <Button variant="contained" href={"https://byousefi.ir/bookshop/"}>
-              Go to The Sample Project
+            <Button
+              variant="contained"
+              style={{ textAlign: "center" }}
+              href={"https://byousefi.ir/bookshop/"}
+            >
+              Sample Project
             </Button>
           </Box>
         </Box>

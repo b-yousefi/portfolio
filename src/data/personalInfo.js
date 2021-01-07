@@ -14,8 +14,7 @@ export const personalInfo = new PersonalInfo(
     "              tendency to think outside of the box and thrive for excellence.\n" +
     "              Relentless when challenged, never gives up until an efficient,\n" +
     "              secure and yet simple enough solution is found.",
-  "Looking for a Full-Stack (Spring, React.js), Back-end (Spring) or\n" +
-    "Frond-end (React.js) role",
+  "",
   "https://www.linkedin.com/in/behnaz-yousefi/",
   "https://github.com/b-yousefi"
 );

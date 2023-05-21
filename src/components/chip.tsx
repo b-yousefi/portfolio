@@ -1,6 +1,11 @@
 import React from "react";
 
-const Chip = (props) => {
+interface ChipProps {
+  color: string;
+  title: string;
+}
+
+const Chip: React.FC<ChipProps> = ({ color, title }) => {
   return (
     <div
       style={{
@@ -10,13 +15,14 @@ const Chip = (props) => {
         fontSize: "14px",
         lineHeight: "25px",
         borderRadius: "20px",
-        backgroundColor: props.color,
+        backgroundColor: color,
         color: "white",
       }}
     >
-      {props.title}
+      {title}
     </div>
   );
 };
 
 export default Chip;
+

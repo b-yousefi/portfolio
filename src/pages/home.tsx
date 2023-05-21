@@ -1,38 +1,22 @@
 import React from "react";
-import { Avatar, Box, Typography } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import Button from "@material-ui/core/Button";
+import { Avatar, Box, Typography } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Button from "@mui/material/Button";
 import { personalInfo } from "../data/personalInfo";
 
-const useStyles = (theme) => ({
-  root: {
-    backgroundColor: "#f5f8fa",
-    padding: 10,
-  },
-  picture: {
-    width: theme.spacing(20),
-    height: theme.spacing(20),
-  },
-  role: {
-    color: "#e91e63",
-  },
-});
-
-const Home = (props) => {
-  const { classes } = props;
+const Home = () => {
   return (
     <div style={{ width: "100%" }}>
       <Box flexDirection={"column"} display="flex" m={1} p={2}>
         <Box display="flex" justifyContent="center">
           <Avatar
             alt={personalInfo.fullName}
-            src={personalInfo.pic}
-            className={classes.picture}
+            src={personalInfo.pic.src}
+            style={{ width: 150, height: 150 }}
           />
         </Box>
-        <Box flexDirection={"column"} className={classes.detail}>
+        <Box flexDirection={"column"}>
           <Box display="flex" justifyContent="center" p={1}>
             <Typography variant="h4" align={"center"}>
               {personalInfo.fullName}
@@ -48,13 +32,13 @@ const Home = (props) => {
               {personalInfo.education}
             </Typography>
           </Box>
-          <Box display="flex" justifyContent="center">
+          <Box display="flex" justifyContent="center" paddingLeft={5} paddingRight={5}>
             <Typography variant="body1" align={"justify"}>
               {personalInfo.summary}
             </Typography>
           </Box>
-          <Box display="flex" justifyContent="center">
-            <Typography variant="h6" align={"center"} className={classes.role}>
+          <Box display="flex" justifyContent="center" m={2}>
+            <Typography variant="h6" align={"center"} color={"#e91e63"}>
               {personalInfo.lookingFor}
             </Typography>
           </Box>
@@ -83,6 +67,7 @@ const Home = (props) => {
           <Box m={1}>
             <Button
               variant="contained"
+              color={"info"}
               style={{ textAlign: "center" }}
               href={"https://byousefi.ir/bookshop/"}
             >
@@ -95,4 +80,4 @@ const Home = (props) => {
   );
 };
 
-export default withStyles(useStyles)(Home);
+export default Home;

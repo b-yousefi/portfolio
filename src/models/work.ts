@@ -1,20 +1,31 @@
 import moment from "moment";
 
 class Work {
+  id: number;
+  jobTitle: string;
+  companyName: string;
+  companyLogoUrl: string;
+  location: string;
+  startTime: Date;
+  endTime: Date | null;
+  tasks: string[];
+  projects: string[];
+
   constructor(
-    id,
-    jobTitle,
-    companyName,
-    companyLogoUrl,
-    location,
-    startTime,
-    endTime,
-    tasks,
-    projects
+    id: number,
+    jobTitle: string,
+    companyName: string,
+    companyLogoUrl: string,
+    location: string,
+    startTime: Date,
+    endTime: Date | null,
+    tasks: string[],
+    projects: string[]
   ) {
     this.id = id;
     this.jobTitle = jobTitle;
     this.companyName = companyName;
+    this.companyLogoUrl = companyLogoUrl;
     this.location = location;
     this.startTime = startTime;
     this.endTime = endTime;
@@ -22,10 +33,10 @@ class Work {
     this.projects = projects;
   }
 
-  get readableStartDate() {
+  get readableStartDate(): string {
     return moment(this.startTime).format("MMMM YYYY");
   }
-  get readableEndDate() {
+  get readableEndDate(): string {
     if (!moment(this.endTime).isValid()) {
       return "Present";
     }

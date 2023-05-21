@@ -1,15 +1,17 @@
 import React from "react";
-import { Box, Grid, Paper, Typography } from "@material-ui/core";
-import CheckIcon from "@material-ui/icons/Check";
-import { withStyles } from "@material-ui/core/styles";
+import { Box, Grid, Paper, Typography } from "@mui/material";
+import CheckIcon from "@mui/icons-material/Check";
+import Work from "../models/work";
 
-const WorkItem = (props) => {
-  const { classes, work } = props;
+interface WorkItemProps {
+   work: Work
+}
 
+export const WorkItem: React.FC<WorkItemProps> = ({work}) => {
   return (
-    <Grid key={work.id} item md={8} xs={12}>
-      <Paper className={classes.item}>
-        <Box display="flex" className={classes.job} flexDirection={"column"}>
+    <Grid key={work.id} item md={8} xs={12} padding={2}>
+      <Paper  style={{padding:20}}>
+        <Box display="flex" flexDirection={"column"}>
           <Typography variant="h6" align={"justify"}>
             {work.jobTitle}
           </Typography>
@@ -49,14 +51,3 @@ const WorkItem = (props) => {
     </Grid>
   );
 };
-
-const useStyles = (theme) => ({
-  item: {
-    padding: 15,
-  },
-  job: {
-    paddingLeft: 20,
-  },
-});
-
-export default withStyles(useStyles)(WorkItem);

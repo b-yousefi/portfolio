@@ -1,14 +1,11 @@
 import React from "react";
-import { CardContent, CardHeader, Grid, Typography } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import { Link } from "react-router-dom";
+import { CardContent, CardHeader, Grid, Typography } from "@mui/material";
+import Card from "@mui/material/Card";
 
-const About = (props) => {
-  const { classes } = props;
+const About = () => {
   return (
-    <Grid container className={classes.root} spacing={2} direction={"column"}>
-      <Grid item>
+    <Grid container>
+      <Grid item xs={12} md={12} padding={5}>
         <Card>
           <CardHeader title={"Who am I?"} />
           <CardContent>
@@ -29,7 +26,7 @@ const About = (props) => {
             <Typography
               variant={"body1"}
               align={"justify"}
-              p={5}
+          
               style={{ margin: 5 }}
             >
               Aside from programming, I love baking! I feel calm and collected
@@ -46,7 +43,7 @@ const About = (props) => {
           </CardContent>
         </Card>
       </Grid>
-      <Grid item>
+      <Grid item padding={5}>
         <Card>
           <CardHeader title={"My Programing Story"} />
           <CardContent>
@@ -93,17 +90,17 @@ const About = (props) => {
             >
               Another chapter in my programming life started when I took on a
               job as a mainframe developer where the sophisticated IDE, i.e.,
-              IntelliJ IDEA, was replaced by a dull emulator in which you
-              couldn't even scroll let alone use a short-key. Despite the
-              challenges, I loved my job since It gave me the opportunity to
-              work directly with database. Furthermore, I learned a lot about
-              loan systems and accounting concepts and got to design and develop
-              various complicated services that would run on thousands of loan
-              accounts. It is needless to say that the standard was high and any
-              mistake could cause a catastrophe. Moreover, I took the
-              predicament presented by working with the out-of-date emulator as
-              an opportunity and developed a program, namely Coboli, to replace
-              it. Although it is a work in progress and has a long way to
+              IntelliJ IDEA, was replaced by a dull emulator in which you could
+              not even scroll let alone use a short-key. Despite the challenges,
+              I loved my job since It gave me the opportunity to work directly
+              with database. Furthermore, I learned a lot about loan systems and
+              accounting concepts and got to design and develop various
+              complicated services that would run on thousands of loan accounts.
+              It is needless to say that the standard was high and any mistake
+              could cause a catastrophe. Moreover, I took the predicament
+              presented by working with the out-of-date emulator as an
+              opportunity and developed a program, namely Coboli, to replace it.
+              Although it is a work in progress and has a long way to
               perfection, I do believe anything that can make the life of even
               one person a bit easier is worth the effort.
             </Typography>
@@ -154,9 +151,9 @@ const About = (props) => {
               style={{ padding: 5 }}
             >
               I put the source code of the project in my Github account at{" "}
-              <Link href={"https://github.com/b-yousefi/Bookshop"}>
+              <a href="https://github.com/b-yousefi/Bookshop">
                 https://github.com/b-yousefi/Bookshop
-              </Link>
+              </a>
               .
             </Typography>
             <Typography
@@ -184,12 +181,4 @@ const About = (props) => {
   );
 };
 
-const useStyles = (theme) => ({
-  root: {
-    margin: 16,
-    // padding: 16,
-    width: "100%",
-  },
-});
-
-export default withStyles(useStyles)(About);
+export default About;

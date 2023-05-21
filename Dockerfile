@@ -1,4 +1,4 @@
-FROM   node:20.1.0-alpine AS deps
+FROM --platform=linux/amd64 node:20.1.0-alpine AS deps
 
 RUN apk add --no-cache libc6-compat
 
@@ -8,7 +8,7 @@ COPY package.json package-lock.json ./
 
 RUN npm ci --omit=dev
 
-FROM  node:20.1.0-alpine AS builder
+FROM --platform=linux/amd64 node:20.1.0-alpine AS builder
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN  npm run build
 
-FROM  node:20.1.0-alpine AS runner
+FROM --platform=linux/amd64 node:20.1.0-alpine AS runner
 
 WORKDIR /app
 
